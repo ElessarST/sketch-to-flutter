@@ -12,6 +12,11 @@ class FlutterView extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Flutter View',
+      theme: new ThemeData(
+<% themeProps.forEach(function(prop){ %>
+  <%- prop.name %>: <%- prop.value %>,
+<% }); %>
+      ),
       home: new MyHomePage(),
     );
   }

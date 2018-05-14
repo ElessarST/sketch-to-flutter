@@ -2,7 +2,7 @@ import {ISketch} from "../../types";
 
 const remote = require("electron").remote;
 const electronFs = remote.require("fs");
-const DEFAULT_PATH = "/Users/aydar/Documents/apps/study/sketch-to-flutter/sketch/small.sketch";
+const DEFAULT_PATH = "./sketch/small.sketch";
 const sketch2json = remote.require("sketch2json");
 
 export function readSketchFile(path: string = DEFAULT_PATH): Promise<ISketch[]> {

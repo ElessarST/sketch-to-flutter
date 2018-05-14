@@ -1,16 +1,19 @@
 export default `new AppBar(
+<% if (leading) { %>
     leading: new IconButton(
-      icon: new Icon(Icons.menu),
+      icon: new Icon(Icons.<%= leading.name %>),
       onPressed: null,
     ),
-    <% if (title) { %>
-      title: new Text('<%= title %>'),
-    <% } %>
+<% } %>
+<% if (title) { %>
+    title: new Text('<%= title %>'),
+<% } %>
     actions: <Widget>[
-      new IconButton(
-        icon: new Icon(Icons.search),
-        tooltip: 'Search',
-        onPressed: null,
-      ),
+<% actions.forEach(function(action){ %>
+        new IconButton(
+            icon: new Icon(Icons.<%= action.name %>),
+            onPressed: null,
+        ),
+<% }); %>
     ],
 ),`;
